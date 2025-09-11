@@ -61,7 +61,7 @@ function authMiddleware(req, res, next) {
 
 // ---------- Google Auth ----------
 app.post("/api/auth/google", async (req, res) => {
-  try {c
+  try {
     const { credential } = req.body;
     if (!credential) return res.status(400).json({ message: "Missing credential" });
 
