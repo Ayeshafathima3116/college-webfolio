@@ -1,0 +1,146 @@
+:root {
+  --g1: #7B47F5;
+  --g2: #25B2F4;
+  --g3: #11D479;
+  --text-dark: #2a2a2a;
+  --text-gray: #555;
+}
+
+/* Container */
+.container {
+  max-width: 1100px;
+  margin: 20px auto;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+/* Grid */
+.cards-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+@media (max-width: 1200px) { .cards-list { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 900px)  { .cards-list { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px)  { .cards-list { grid-template-columns: 1fr; } }
+
+/* Card */
+.card {
+  position: relative;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #fff;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center content */
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.25s ease;
+  min-height: 260px;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: transparent;
+  box-shadow: 0 0 12px rgba(123, 71, 245, 0.5),
+              0 0 12px rgba(37, 178, 244, 0.5),
+              0 0 12px rgba(17, 212, 121, 0.5);
+}
+
+/* Top gradient line */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--g1), var(--g2), var(--g3));
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/* Avatar */
+.card-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.card-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Student Info */
+.card-info {
+  margin-bottom: 10px;
+}
+
+.student-name {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.student-dept,
+.student-percentage {
+  margin: 4px 0;
+  font-size: 14px;
+  color: var(--text-gray);
+}
+
+/* Footer */
+.card-footer {
+  margin-top: auto;
+  padding-top: 8px;
+}
+.card-link {
+  display: inline-block;
+  padding: 6px 14px;
+  font-size: 13px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, var(--g1), var(--g2));
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  text-align: center;
+}
+.card-link:hover {
+  opacity: 0.9;
+}
+
+/* Pagination */
+.pagination {
+  text-align: center;
+  margin-top: 25px;
+}
+.pagination-btn {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  color: #333;
+  padding: 6px 12px;
+  margin: 0 4px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.pagination-btn:hover:not(:disabled) {
+  background-color: #0073e6;
+  color: white;
+  border-color: #0073e6;
+}
+.pagination-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}

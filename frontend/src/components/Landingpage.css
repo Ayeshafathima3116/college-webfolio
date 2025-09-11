@@ -1,0 +1,260 @@
+/* Page background */
+.page-background1 {
+  background: linear-gradient(135deg, #7B47F5, #25B2F4 ,#11D479);
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+}
+
+:root {
+  --light: #F9F8F6;
+  --dark: #070C17;
+  --g1: #7B47F5;
+  --g2: #25B2F4;
+  --g3: #11D479;
+}
+
+.page-background {
+  background: var(--light);
+  background-image:
+    radial-gradient(1200px 600px at 50% -200px, rgba(123, 71, 245, 0.15), transparent),
+    linear-gradient(
+      120deg,
+      rgba(123, 71, 245, 0.25),
+      rgba(37, 178, 244, 0.25) 50%,
+      rgba(17, 212, 121, 0.25)
+    );
+  background-attachment: fixed;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 15px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #1a237e;
+}
+
+.login-btn {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.login-btn:hover {
+  opacity: 0.9;
+}
+
+/* Filters container */
+.filters-container {
+  margin: 25px auto;
+  padding: 20px;
+  max-width: 1200px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border: 3px solid transparent;
+  background: 
+    linear-gradient(var(--light), var(--light)) padding-box,
+    linear-gradient(135deg, #9e53ed, #4a89f7) border-box;
+  background-clip: padding-box, border-box;
+  background-origin: border-box;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  position: relative; /* ensure stacking context */
+  z-index: 50;
+}
+
+.filters-container:hover {
+  box-shadow: 
+    0 0 12px rgba(123, 71, 245, 0.6),
+    0 0 20px rgba(37, 178, 244, 0.5),
+    0 0 28px rgba(17, 212, 121, 0.4);
+  transform: translateY(-2px);
+}
+
+.filters-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Inputs */
+.filter-input,
+.multi-select {
+  flex: 1;
+  min-width: 160px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 14px;
+}
+
+.multi-select {
+  position: relative; /* important for dropdown positioning */
+  background: white;
+  z-index: 200; /* keep above other elements */
+}
+
+/* Multi-select dropdown */
+.multi-select-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.placeholder {
+  color: #888;
+}
+.tags {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 5px;
+  max-width: 250px; /* adjust */
+}
+.tag {
+  background: #eee;
+  border-radius: 12px;
+  padding: 2px 8px;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+
+.reset-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  background: rgb(15, 16, 15);
+  border: 2px solid #e74c3c;
+  color: #090201;
+  transition: all 0.2s ease-in-out;
+}
+.reset-btn:hover {
+  background: #3c78e7;
+  color: white;
+}
+
+.multi-select-dropdown {
+  position: absolute;
+  top: 105%;
+  left: 0;
+  width: 100%;
+  max-height: 220px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  background: white;
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  z-index: 9999; /* force above cards */
+}
+
+/* Buttons */
+/* Buttons */ 
+
+.filter-buttons {
+   display: flex; 
+   justify-content: flex-end; 
+   gap: 10px; 
+  
+  } 
+   .reset-btn, 
+   .apply-btn { 
+    border: none; 
+    padding: 8px 18px; 
+    border-radius: 8px; 
+    font-size: 14px; cursor: pointer; } 
+    .reset-btn { 
+      background: #eee;
+    }
+.apply-btn {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+}
+
+/* Candidates */
+.dashboard-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+.section-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+/* Keep all filter inputs same size */
+.filter-input,
+.multi-select {
+  width: 200px;
+  height: 40px;
+  padding: 6px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+}
+
+/* Multi-select header with scrollable tags */
+.tags-list {
+  display: flex;
+  flex-direction: column;
+  max-height: 80px;   /* limit height */
+  overflow-y: auto;   /* vertical scroll */
+  gap: 4px;
+}
+
+.tag {
+  background: #eee;
+  border-radius: 10px;
+  padding: 3px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  margin-left: 5px;
+  cursor: pointer;
+  color: red;
+  font-size: 14px;
+}
+
+.multi-select-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Custom input for Other */
+.other-skill-input {
+  margin-left: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 4px;
+  font-size: 13px;
+}

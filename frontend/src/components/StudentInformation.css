@@ -1,0 +1,257 @@
+StudentInformation.css
+
+
+/* Container and Body */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.form-container {
+  background: #f4f6f8;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  max-width: 600px;
+  width: 100%;
+  padding: 30px 35px;
+}
+
+/* Headings */
+.form-container h1 {
+  color: #1565c0;
+  font-weight: 700;
+  margin-bottom: 25px;
+  user-select: none;
+}
+
+/* Labels */
+label {
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 6px;
+  display: block;
+  user-select: none;
+  text-align: left;
+}
+
+/* Inputs & Selects */
+input[type="text"],
+input[type="url"],
+input[type="number"],
+input[type="file"],
+select,
+.form-control {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  border: 2px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  background-color: #fff;
+  color: #111;
+}
+
+input[type="text"]:focus,
+input[type="url"]:focus,
+input[type="number"]:focus,
+input[type="file"]:focus,
+select:focus,
+.form-control:focus {
+  border-color: #1565c0;
+  outline: none;
+  box-shadow: 0 0 8px rgba(21, 101, 192, 0.4);
+}
+
+/* Skills Box */
+.skills-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 45px;
+  align-items: center;
+  cursor: pointer;
+  padding: 6px 10px;
+  border: 2px solid #cbd5e1;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #111;
+  user-select: none;
+  position: relative;
+}
+
+/* Placeholder text style */
+.skills-box > span.text-muted {
+  color: #a0a0a0;
+  font-style: italic;
+}
+
+/* Skill tags */
+.skill-tag {
+  background-color: #1565c0;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.skill-tag:hover {
+  background-color: #0d3a85;
+}
+
+/* Remove skill 'x' */
+.remove-skill {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1;
+  user-select: none;
+  padding-left: 6px;
+  transition: color 0.3s ease;
+}
+
+.remove-skill:hover {
+  color: #ff6b6b;
+}
+
+/* Skills Dropdown */
+.skills-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  padding: 8px;
+  max-height: 150px;   /* smaller height */
+  overflow-y: auto;    /* scroll instead of pushing form */
+  margin-top: 4px;
+  z-index: 999;
+}
+
+/* Skill option */
+.skill-option {
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #333;
+  transition: background-color 0.2s ease;
+}
+
+.skill-option:hover {
+  background-color: #e7f0ff;
+}
+
+/* Checkbox inside dropdown */
+.skill-option input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #1565c0;
+  cursor: pointer;
+}
+
+/* Scrollbar Styling */
+.skills-dropdown::-webkit-scrollbar {
+  width: 8px;
+}
+
+.skills-dropdown::-webkit-scrollbar-thumb {
+  background-color: rgba(21, 78, 192, 0.5);
+  border-radius: 5px;
+}
+
+.skills-dropdown::-webkit-scrollbar-track {
+  background: #f0f4ff;
+}
+
+/* Responsive tweaks */
+
+/* Smaller container padding on very small screens */
+@media (max-width: 480px) {
+  .form-container {
+    padding: 20px 15px;
+  }
+
+  .form-container h2 {
+    font-size: 1.5rem;
+  }
+
+  label {
+    font-size: 0.9rem;
+  }
+
+  .skills-box {
+    min-height: 40px;
+  }
+
+  .skill-tag {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+  }
+
+  .skills-dropdown {
+    max-height: 180px;
+    max-width: 100%;
+    left: 0;
+    right: auto;
+    width: 100%;
+  }
+}
+
+/* Stack form fields full width on small devices */
+@media (max-width: 576px) {
+  .row > [class*='col-'] {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Skills dropdown full width on small screens */
+@media (max-width: 600px) {
+  .skills-dropdown {
+    width: 100%;
+    max-width: 100%;
+    left: 0;
+    right: auto;
+    border-radius: 8px;
+    margin-top: 6px;
+  }
+}
+
+.submit {
+  background-color: #154ec080;
+  color: white;    
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit:hover {
+  background-color: #154ec0;
+}
+
+/* Remove arrows (spinners) from number input */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
