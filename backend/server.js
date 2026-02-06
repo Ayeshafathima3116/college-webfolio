@@ -74,8 +74,9 @@ app.post("/api/auth/google", async (req, res) => {
       return res.status(400).json({ message: "Invalid Google token" });
     }
 
-    if (!googleUser.email.endsWith("@svrec.ac.in")) {
-      return res.status(403).json({ message: "Use your svrec.ac.in email" });
+    const allowedDomain = process.env.ALLOWED_DOMAIN || "svrec.ac.in";
+    if (!googleUser.email.endsWith(`@${allowedDomain}`)) {
+      return res.status(403).json({ message: `Use your ${allowedDomain} email` });
     }
 
     const rollNumber = googleUser.email.split("@")[0];
